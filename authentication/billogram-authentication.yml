@@ -1,0 +1,27 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.billogram.com/guides/authentication
+docs: https://docs.billogram.com/guides/authentication
+summary:
+  types: [http]
+  http_schemes: [basic]
+  transport: https-required
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: >-
+    HTTP Basic Authentication. The API User ID is sent as the username and the
+    API Key as the password, Base64-encoded in the Authorization header
+    (Authorization: Basic base64(API_USER_ID:API_KEY)). All requests must be
+    made over HTTPS.
+  credential_source: >-
+    Created in the Billogram web app under Company Settings -> API -> API Users.
+    Separate API users are recommended per integration for independent access
+    management.
+  environments:
+    sandbox: https://sandbox.billogram.com/api/v2
+    production: https://billogram.com/api/v2
+  environment_separation: >-
+    Credentials are environment-specific; sandbox credentials only work against
+    the sandbox base URL and production credentials only against production.

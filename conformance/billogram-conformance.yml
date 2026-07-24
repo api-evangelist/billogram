@@ -1,0 +1,27 @@
+generated: '2026-07-18'
+method: derived
+source: >-
+  Derived from Billogram public docs (authentication, requests-and-responses,
+  webhooks guides). No published compliance/certification program was found, so
+  no Compliance pointer is emitted.
+standards:
+- id: oauth2
+  conforms: false
+  evidence: API uses HTTP Basic Auth, not OAuth2.
+- id: openid-connect
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use a custom { status, data } envelope, not application/problem+json.
+- id: http-basic-auth
+  conforms: true
+  evidence: Documented HTTP Basic Auth (API User ID + API Key) over HTTPS.
+- id: webhook-hmac-signing
+  conforms: true
+  evidence: Webhooks signed with HMAC-SHA256 (Billogram-Signature header, sign_key).
+- id: pagination
+  conforms: true
+  evidence: page / page_size query parameters on list endpoints.
+- id: rest-json
+  conforms: true
+  evidence: RESTful JSON API over HTTPS.

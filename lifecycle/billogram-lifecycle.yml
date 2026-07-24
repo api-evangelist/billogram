@@ -1,0 +1,25 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.billogram.com/
+versioning:
+  scheme: uri-path
+  current: v2
+  docs: https://docs.billogram.com/guides/getting-started
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: >-
+    No formal deprecation policy or RFC 8594 Sunset/Deprecation header support
+    is documented. One deprecated webhook callback type is noted in the docs
+    (EfakturaRegistration - deprecated Swedish internet-banking registrations).
+sla:
+  url: null
+  uptime_target: null
+status_page:
+  url: null
+  note: >-
+    status.billogram.com resolves but 301-redirects to the marketing homepage;
+    no dedicated status/uptime page is published.
+deprecated_operations: []
+deprecated_events:
+- EfakturaRegistration

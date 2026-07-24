@@ -1,0 +1,61 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.billogram.com/guides/webhooks
+docs: https://docs.billogram.com/guides/webhooks
+type: Webhooks
+transport: http-callback
+note: >-
+  Billogram publishes a documented webhook (callback) surface but no AsyncAPI
+  document. This artifact captures the callback catalog only.
+signing:
+  algorithm: HMAC-SHA256
+  headers:
+  - Billogram-Signature
+  - Billogram-Request-Timestamp
+  secret: sign_key
+  verification: >-
+    Compute HMAC-SHA256 over the base string using your sign_key and do a
+    timing-safe comparison. Use the raw request-body bytes before JSON parsing.
+retry: >-
+  Any non-success status (or a timeout) triggers Billogram's retry logic;
+  persistently failing webhooks eventually trigger a detailed error email.
+  Exact intervals / max attempts are not published.
+payload:
+  fields:
+  - callback_id
+  - callback_timestamp
+  - callback_type
+  - custom
+  - billogram
+  - event
+  note: >-
+    For BillogramEvent callbacks the concrete event schema is determined by
+    event.type.
+events:
+  billogram_event_types:
+  - BillogramCreated
+  - BillogramSent
+  - DeliveryFailed
+  - Resent
+  - ReminderSent
+  - Payment
+  - BillogramEnded
+  - Credit
+  callback_types:
+  - name: RecipientUpdated
+    meaning: Customer email verification or recurring payment changes.
+  - name: PaymentRecalled
+    meaning: Negative allocation from recalled payments.
+  - name: EinvoiceRegistrationCreated
+    meaning: Successful e-invoice registration.
+  - name: EinvoiceRegistrationDeleted
+    meaning: Removed e-invoice registration.
+  - name: BillingTab
+    meaning: Billing tab processing events.
+  - name: EinvoiceRegistrationIdentificationMismatch
+    meaning: Failed registration (Finland only).
+  - name: EinvoiceRegistrationRecipientNotFound
+    meaning: Customer number mismatch (Finland only).
+  - name: EfakturaRegistration
+    meaning: Deprecated Swedish internet-banking registrations.
+    deprecated: true

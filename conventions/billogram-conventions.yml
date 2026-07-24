@@ -1,0 +1,56 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.billogram.com/guides/requests-and-responses
+docs: https://docs.billogram.com/guides/requests-and-responses
+authentication:
+  style: http-basic
+  ref: authentication/billogram-authentication.yml
+response_envelope:
+  shape: '{ status, data }'
+  fields:
+  - name: status
+    description: >-
+      String indicator. "OK" on success, or a machine-readable error identifier
+      on failure (e.g. INVALID_PARAMETER, INVALID_OBJECT_STATE,
+      READ_ONLY_PARAMETER).
+  - name: data
+    description: The requested resource(s) on success, or error details on failure.
+pagination:
+  style: page-number
+  params:
+  - name: page
+    description: Page number, integer starting at 1.
+  - name: page_size
+    description: Results per page. Default 25, maximum 100.
+filtering_sorting:
+  params:
+  - filter_type
+  - filter_field
+  - filter_value
+  - order_field
+  - order_direction
+error_envelope:
+  ref: errors/billogram-problem-types.yml
+  fields:
+  - name: status
+    description: Machine-readable error identifier.
+  - name: data.message
+    description: Human-readable explanation.
+  - name: data.field
+    description: Optional. The problematic parameter.
+  - name: data.field_path
+    description: Optional. Path to the problematic parameter.
+idempotency:
+  supported: false
+  note: >-
+    The published Requests & Responses guide documents no idempotency-key
+    mechanism. No Idempotency pointer is emitted.
+rate_limiting:
+  documented: false
+  note: No rate-limit signaling is documented in the public guides.
+versioning:
+  scheme: uri-path
+  current: v2
+webhooks:
+  ref: asyncapi/billogram-webhooks.yml
+  signing: HMAC-SHA256 (Billogram-Signature + Billogram-Request-Timestamp headers)

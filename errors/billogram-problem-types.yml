@@ -1,0 +1,36 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.billogram.com/guides/requests-and-responses
+docs: https://docs.billogram.com/guides/requests-and-responses
+format: custom
+envelope:
+  shape: '{ status, data: { message, field?, field_path? } }'
+  status_field: status
+  message_field: data.message
+note: >-
+  Billogram does not use RFC 9457 problem+json. Errors are returned in the
+  standard { status, data } envelope: the status field carries a machine-readable
+  identifier and data.message a human-readable explanation, optionally with
+  data.field / data.field_path identifying the offending parameter.
+http_status_codes:
+- status: 200
+  meaning: Success
+- status: 400
+  meaning: Validation / invalid object-state errors
+- status: 401
+  meaning: Authentication failure
+- status: 403
+  meaning: Permission or feature not available
+- status: 404
+  meaning: Resource not found
+- status: 500
+  meaning: Server error
+- status: 503
+  meaning: Service unavailable
+error_identifiers:
+- code: INVALID_PARAMETER
+  meaning: A supplied parameter was invalid.
+- code: INVALID_OBJECT_STATE
+  meaning: The operation is not valid for the object's current state.
+- code: READ_ONLY_PARAMETER
+  meaning: An attempt was made to write a read-only parameter.

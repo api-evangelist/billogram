@@ -1,8 +1,16 @@
 aid: billogram
 name: Billogram
-description: 'Billogram is a company surfaced as a portfolio company of partech and added to the API Evangelist
-  network as a stub for enrichment. Sector: Applicative SaaS. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  Billogram is a Swedish (Billogram AB) Invoice-to-Cash orchestration platform
+  that automates the full invoicing and payment lifecycle for businesses with
+  recurring revenue - invoice creation and distribution, digital payment
+  collection, customer communication, reminders and dunning, e-invoice
+  registration, and financial reporting. It serves the insurance, telecom,
+  mobility/parking, and energy sectors. The Billogram v2 API is a RESTful JSON
+  API (HTTP Basic Auth) covering customers, billograms/invoices, items, credit
+  invoices, payment sources, offers, billing tabs, reports, and HMAC-signed
+  webhooks, with separate sandbox and production environments and an official
+  Python client library.
 url: https://raw.githubusercontent.com/api-evangelist/billogram/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,13 +18,60 @@ x-backed-by:
 - partech
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://billogram.com/static/images/billogram-og_@2X.png
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Applicative Saas
-apis: []
+- Invoicing
+- Billing
+- Payments
+- Invoice-to-Cash
+- E-invoicing
+- Fintech
+- Webhooks
+apis:
+- name: Billogram v2 API
+  description: >-
+    RESTful JSON API for managing invoices (billograms), customers, items,
+    credit invoices, payment sources, offers, billing tabs, reports, and
+    webhooks. Authenticated with HTTP Basic Auth (API User ID + API Key) over
+    HTTPS, with separate sandbox and production environments.
+  humanURL: https://docs.billogram.com/
+  baseURL: https://billogram.com/api/v2
+  tags:
+  - Invoicing
+  - Billing
+  - Payments
+  properties:
+  - type: Authentication
+    url: authentication/billogram-authentication.yml
+  - type: Conventions
+    url: conventions/billogram-conventions.yml
+  - type: ErrorCatalog
+    url: errors/billogram-problem-types.yml
+  - type: Webhooks
+    url: asyncapi/billogram-webhooks.yml
+  - type: Sandbox
+    url: sandbox/billogram-sandbox.yml
+  - type: Lifecycle
+    url: lifecycle/billogram-lifecycle.yml
+  - type: Conformance
+    url: conformance/billogram-conformance.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +80,34 @@ maintainers:
 common:
 - type: Website
   url: https://billogram.com/
+- type: DeveloperPortal
+  url: https://docs.billogram.com/
+- type: Documentation
+  url: https://docs.billogram.com/
+- type: APIReference
+  url: https://docs.billogram.com/api
+- type: GettingStarted
+  url: https://docs.billogram.com/guides/getting-started
+- type: Blog
+  url: https://billogram.com/blog
+- type: Login
+  url: https://billogram.com/login
+- type: PrivacyPolicy
+  url: https://billogram.com/privacy
+- type: Packages
+  url: packages/billogram-packages.yml
+- type: SDKs
+  url: packages/billogram-packages.yml
+- type: LLMsTxt
+  url: llms/billogram-llms.txt
+- type: DomainSecurity
+  url: security/billogram-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/billogram-vulnerability-disclosure.yml
+- type: Security
+  url: security/billogram-vulnerability-disclosure.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

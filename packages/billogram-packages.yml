@@ -1,0 +1,16 @@
+generated: '2026-07-18'
+method: searched
+source: https://pypi.org/project/billogram-api/
+packages:
+- language: python
+  registry: pypi
+  name: billogram_api
+  url: https://pypi.org/project/billogram-api/
+  install: pip install billogram_api
+  version: '1.2'
+  license: MIT
+  official: true
+  description: >-
+    Official Billogram AB client library for the Billogram v2 API. Provides
+    convenient Python wrappers for connecting to the public Billogram invoicing
+    service API (customers, billograms/invoices, items, webhooks).

@@ -1,0 +1,26 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.billogram.com/guides/getting-started
+docs: https://docs.billogram.com/guides/authentication
+test_live_separation:
+  model: separate-environment
+  description: >-
+    Billogram runs a fully separate sandbox environment with its own base URL
+    and its own API credentials. Sandbox credentials do not work against
+    production and vice versa.
+  environments:
+  - name: sandbox
+    base_url: https://sandbox.billogram.com/api/v2
+  - name: production
+    base_url: https://billogram.com/api/v2
+credentials:
+  note: >-
+    A sandbox account is created separately and its own API User ID / API Key
+    are generated under Company Settings -> API -> API Users. No shared / public
+    magic test credentials are published.
+magic_test_values:
+  published: false
+  note: >-
+    The public quickstart does not publish fixed test card numbers, test IBANs,
+    or hosted test tokens. Test data is created within the user's own sandbox
+    account. No test values are invented here.

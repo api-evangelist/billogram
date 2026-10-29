@@ -64,6 +64,96 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Billogram is a company surfaced as a portfolio company of partech and added to the API Evangelist network as a stub for enrichment. Sector: Applicative SaaS. This profile is a lead awaiting the enrichment pipeline.
+Billogram is a Swedish (Billogram AB) Invoice-to-Cash orchestration platform that automates the full invoicing and payment lifecycle for businesses with recurring revenue - invoice creation and distribution, digital payment collection, customer communication, reminders and dunning, e-invoice registration, and financial reporting. It serves the insurance, telecom, mobility/parking, and energy sectors. The Billogram v2 API is a RESTful JSON API (HTTP Basic Auth) covering customers, billograms/invoices, items, credit invoices, payment sources, offers, billing tabs, reports, and HMAC-signed webhooks, with separate sandbox and production environments and an official Python client library.
 
-Backed by: partech — https://billogram.com/
+**Areas:** Company · Applicative Saas · Invoicing · Billing · Payments · Invoice-to-Cash · E-Invoicing · Fintech · Webhook
+
+## Billogram on APIs.io
+
+Everything profiled for Billogram is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/billogram/](https://apis.io/providers/billogram/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Billogram v2 API](https://apis.io/apis/billogram/billogram-v2-api/) — RESTful JSON API for managing invoices (billograms), customers, items, credit invoices, payment sources, offers, billing tabs, reports, and webhooks.…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Billogram Webhooks](https://apis.io/asyncapis/billogram/billogram-webhooks/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Billogram Authentication](https://apis.io/security/billogram/billogram-authentication/)
+- [Billogram Domain Security](https://apis.io/security/billogram/billogram-domain-security/)
+- [Billogram Vulnerability Disclosure](https://apis.io/security/billogram/billogram-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://billogram.com/)
+- [Documentation](https://docs.billogram.com/)
+- [Getting started](https://docs.billogram.com/guides/getting-started)
+- [API reference](https://docs.billogram.com/api)
+- [Blog](https://billogram.com/blog)
+- [Privacy policy](https://billogram.com/privacy)
+
+## API Evangelist rating
+
+**Kin Score 37.5** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 39.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 66.7 |
+| Access clarity | 17.1 |
+
+**Agent readiness 22.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 24.1** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/billogram/](https://apis.io/providers/billogram/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Billogram: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/billogram/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
